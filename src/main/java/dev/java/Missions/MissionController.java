@@ -1,4 +1,4 @@
-package dev.java;
+package dev.java.Missions;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping
-public class NinjaController {
+public class MissionController {
 
-	@GetMapping("/Welcome")
+	@GetMapping("/Missions")
 	public String home() {
-		return "Hello, World!";
+		return "Missions";
 	}
 }

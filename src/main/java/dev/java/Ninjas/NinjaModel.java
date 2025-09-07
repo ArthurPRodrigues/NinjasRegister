@@ -1,5 +1,8 @@
-package dev.java;
+package dev.java.Ninjas;
 
+import java.util.List;
+
+import dev.java.Missions.MissionModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,10 +15,20 @@ public class NinjaModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
-	String email;
-	String name;
-	int age;
+	private Long id;
+	private String email;
+	private String name;
+	private int age;
+	private List<MissionModel> missions;
+	public NinjaModel() {
+	}
+
+	public NinjaModel(String name, String email, int age) {
+		this.name = name;
+		this.email = email;
+		this.age = age;
+	}
+
 
 	public String getEmail() {
 		return email;
