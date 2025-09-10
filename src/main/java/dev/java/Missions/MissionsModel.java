@@ -1,26 +1,34 @@
 package dev.java.Missions;
 
+import java.util.List;
+
+import dev.java.Ninjas.NinjaModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_missions")
-public class MissionModel {
+public class MissionsModel {
 
 	@Id
 	@GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
 	private Long id;
 	private String missionName;
-	private String missionType;
+	private String difficultyLevel;
 	private String missionStatus;
-	public MissionModel() {
+
+	@OneToMany(mappedBy = "missions")// Many missions can have one ninja
+	private List<NinjaModel> ninjas;
+
+	public MissionsModel() {
 	}
 
-	public MissionModel(String missionName, String missionType, String missionStatus) {
+	public MissionsModel(String missionName, String difficultyLevel, String missionStatus) {
 		this.missionName = missionName;
-		this.missionType = missionType;
+		this.difficultyLevel = difficultyLevel;
 		this.missionStatus = missionStatus;
 	}
 
@@ -32,8 +40,8 @@ public class MissionModel {
 		return missionName;
 	}
 
-	public String getMissionType() {
-		return missionType;
+	public String getdifficultyLevel() {
+		return difficultyLevel;
 	}
 
 	public String getMissionStatus() {
@@ -48,8 +56,8 @@ public class MissionModel {
 		this.missionName = missionName;
 	}
 
-	public void setMissionType(String missionType) {
-		this.missionType = missionType;
+	public void setdifficultyLevel(String difficultyLevel) {
+		this.difficultyLevel = difficultyLevel;
 	}
 
 	public void setMissionStatus(String missionStatus) {

@@ -1,12 +1,12 @@
 package dev.java.Ninjas;
 
-import java.util.List;
-
-import dev.java.Missions.MissionModel;
+import dev.java.Missions.MissionsModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity // This will create a table in the database, therefore, itll be a model part of my db.
@@ -19,7 +19,11 @@ public class NinjaModel {
 	private String email;
 	private String name;
 	private int age;
-	private List<MissionModel> missions;
+
+	@ManyToOne // Many ninjas can have one mission
+	@JoinColumn(name = "missions_id") //FK
+	private MissionsModel mission;
+
 	public NinjaModel() {
 	}
 
