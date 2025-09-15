@@ -1,6 +1,7 @@
 package dev.java.Ninjas;
 
 import dev.java.Missions.MissionsModel;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,9 +16,17 @@ public class NinjaModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	@Column (name = "id")
 	private Long id;
-	private String email;
+
+	@Column (name = "name")
 	private String name;
+
+	@Column (name = "email")
+	private String email;
+
+	@Column (name = "age")
 	private int age;
 
 	@ManyToOne // Many ninjas can have one mission
@@ -30,31 +39,6 @@ public class NinjaModel {
 	public NinjaModel(String name, String email, int age) {
 		this.name = name;
 		this.email = email;
-		this.age = age;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setAge(int age) {
 		this.age = age;
 	}
 }
