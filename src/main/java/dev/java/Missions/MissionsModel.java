@@ -29,7 +29,7 @@ public class MissionsModel {
 	@Column(name = "mission_status")
 	private String missionStatus;
 
-	@OneToMany(mappedBy = "missions")// Many missions can have one ninja
+	@OneToMany(mappedBy = "mission")
 	private List<NinjaModel> ninjas;
 
 	public MissionsModel() {
