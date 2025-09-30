@@ -10,7 +10,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-@Entity // This will create a table in the database, therefore, itll be a model part of my db.
+@Entity
 @Table(name = "tb_register")
 public class NinjaModel {
 
@@ -29,8 +29,8 @@ public class NinjaModel {
 	@Column (name = "age")
 	private int age;
 
-	@ManyToOne // Many ninjas can have one mission
-	@JoinColumn(name = "missions_id") //FK
+	@ManyToOne
+	@JoinColumn(name = "mission_id")
 	private MissionsModel mission;
 
 	public NinjaModel() {
