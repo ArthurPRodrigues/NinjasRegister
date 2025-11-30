@@ -11,12 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class MissionController {
 
-	@GetMapping("/Welcome")
-	public String home() {
-		return "Hello, World!";
-	}
-
-	@GetMapping("/Missions")
+	@GetMapping("/Missions/Missions")
 	public String ninjas() {
 		return "These are the Missions!";
 	}

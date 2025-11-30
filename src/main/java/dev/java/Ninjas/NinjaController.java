@@ -1,5 +1,7 @@
 package dev.java.Ninjas;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,14 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class NinjaController {
 
-	@GetMapping("/Welcome")
+	private final NinjaService ninjaService;
+
+	public NinjaController(NinjaService ninjaService) {
+		this.ninjaService = ninjaService;
+	}
+
+	@GetMapping("/Welcome/Ninjas")
 	public String home() {
 		return "Hello, World!";
 	}
 
 	@GetMapping("/Ninjas")
-	public String ninjas() {
-		return "These are the Ninjas!";
+	public List<NinjaDTO> ninjas() {
+		return ninjaService.listNinja();
 	}
 
 	@GetMapping("/Ninjas/id")
