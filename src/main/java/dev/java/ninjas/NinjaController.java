@@ -28,18 +28,20 @@ public class NinjaController {
 	}
 
 	@GetMapping("/Ninjas")
-	public List<NinjaDTO> ninjas() {
-		return ninjaService.listNinja();
+	public ResponseEntity<List<NinjaDTO>> listarTodosNinjas() {
+		List<NinjaDTO> allNinjas = this.ninjaService.listNinja();
+		return ResponseEntity.status(HttpStatus.OK)
+				.body(allNinjas);
 	}
 
 	@GetMapping("/Ninjas/id")
-	public String ninjasById() {
-		return "This is the Ninja by ID!";
+	public ResponseEntity<String> ninjasById() {
+		return ResponseEntity.ok("This is the Ninja!");
 	}
 
 	@PutMapping("/Ninjas/update")
-	public String updateNinja() {
-		return "This is the Update Ninja!";
+	public ResponseEntity<String> updateNinja() {
+		return ResponseEntity.ok("This is the Update Ninja!");
 	}
 
 	@PostMapping("/Ninjas/new")
