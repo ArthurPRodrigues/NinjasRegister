@@ -1,4 +1,4 @@
-package dev.java.Missions;
+package dev.java.missions;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_missions")
-public class MissionsModel {
+public class MissionModel {
 
 	@Id
 	@GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
@@ -32,12 +32,16 @@ public class MissionsModel {
 	@OneToMany(mappedBy = "mission")
 	private List<NinjaModel> ninjas;
 
-	public MissionsModel() {
+	public MissionModel() {
 	}
 
-	public MissionsModel(String missionName, String difficultyLevel, String missionStatus) {
+	public MissionModel(String missionName, String difficultyLevel, String missionStatus) {
 		this.missionName = missionName;
 		this.difficultyLevel = difficultyLevel;
 		this.missionStatus = missionStatus;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 }
