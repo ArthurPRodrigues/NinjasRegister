@@ -1,4 +1,4 @@
-package dev.java.Missions;
+package dev.java.missions;
 
 import lombok.Data;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package dev.java.Missions;
+package dev.java.missions;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
