@@ -1,9 +1,12 @@
-package dev.java.Ninjas;
+package dev.java.ninjas;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,12 +43,19 @@ public class NinjaController {
 	}
 
 	@PostMapping("/Ninjas/new")
-	public String newNinja() {
-		return "This is the New Ninja!";
+	public ResponseEntity<String> createNinja() {
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body("Ninja created successfully.");
 	}
 
-	@DeleteMapping("/Ninjas/delete")
-	public String deleteNinja() {
-		return "This is the Delete Ninja!";
+	@DeleteMapping("/{id}")
+	public ResponseEntity<String> deleteNinja(@PathVariable Long id) {
+		if (ninjaService.listNinjaPerId(id) != null) {
+			ninjaService.deleteNinja(id);
+			return ResponseEntity.ok( "Ninja with ID: " + id + " deleted successfully.");
+		} else {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND)
+					.body("Ninja with ID: " + id + " not found.");
+		}
 	}
 }

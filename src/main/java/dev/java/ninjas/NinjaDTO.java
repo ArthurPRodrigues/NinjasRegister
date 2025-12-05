@@ -1,4 +1,4 @@
-package dev.java.Ninjas;
+package dev.java.ninjas;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

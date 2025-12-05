@@ -2,7 +2,7 @@ package dev.java.Missions;
 
 import java.util.List;
 
-import dev.java.Ninjas.NinjaModel;
+import dev.java.ninjas.NinjaModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package dev.java.Ninjas;
+package dev.java.ninjas;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

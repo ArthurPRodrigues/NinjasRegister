@@ -1,4 +1,4 @@
-package dev.java.Ninjas;
+package dev.java.ninjas;
 
 import dev.java.Missions.MissionsModel;
 import jakarta.persistence.Column;
