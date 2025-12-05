@@ -30,8 +30,7 @@ public class NinjaController {
 	@GetMapping("/Ninjas")
 	public ResponseEntity<List<NinjaDTO>> listarTodosNinjas() {
 		List<NinjaDTO> allNinjas = this.ninjaService.listNinja();
-		return ResponseEntity.status(HttpStatus.OK)
-				.body(allNinjas);
+		return ResponseEntity.ok(allNinjas);
 	}
 
 	@GetMapping("/Ninjas/id")
