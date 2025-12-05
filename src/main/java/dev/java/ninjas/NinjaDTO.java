@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import dev.java.Missions.MissionsModel;
+import dev.java.missions.MissionModel;
 
 @Data
 @AllArgsConstructor
@@ -16,5 +16,5 @@ public class NinjaDTO {
 	private String email;
 	private String imgUrl;
 	private int age;
-	private MissionsModel missions;
+	private MissionModel missions;
 }

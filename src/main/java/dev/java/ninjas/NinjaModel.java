@@ -1,6 +1,6 @@
 package dev.java.ninjas;
 
-import dev.java.Missions.MissionsModel;
+import dev.java.missions.MissionModel;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -42,5 +42,5 @@ public class NinjaModel {
 
 	@ManyToOne
 	@JoinColumn(name = "mission_id")
-	private MissionsModel mission;
+	private MissionModel mission;
 }
